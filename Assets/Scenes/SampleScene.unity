@@ -414,33 +414,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1082084756}
-  - component: {fileID: 1082084755}
+  - component: {fileID: 1082084757}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GridController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1082084755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082084754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64fd15a8c8460a74e9a64eaced3a362d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gemBlue: {fileID: 1012589614496524, guid: fba86566244f643ce94d8d0c62a64300, type: 3}
-  gemPurp: {fileID: 1126028849200766, guid: 038eb1ba32a23407c94cc3d88aaf591b, type: 3}
-  gemPink: {fileID: 1317063988068746, guid: 807c1c1c2da1d4a5d86ceffb85a3b363, type: 3}
-  gemGreen: {fileID: 1926542691732368, guid: 06bfdc4499737419aae4ec7eaece6e56, type: 3}
-  gemYellow: {fileID: 1130909246312860, guid: 59e86460fe9a64a56b12593153dfa163, type: 3}
-  gemOrange: {fileID: 1811144861758264, guid: 060656f3a77394676a89e799354dc1d3, type: 3}
-  originPosition: {x: 0, y: 5, z: 0}
 --- !u!4 &1082084756
 Transform:
   m_ObjectHideFlags: 0
@@ -456,3 +437,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1082084757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082084754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64fd15a8c8460a74e9a64eaced3a362d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemBlue: {fileID: 1012589614496524, guid: fba86566244f643ce94d8d0c62a64300, type: 3}
+  gemPurp: {fileID: 1126028849200766, guid: 038eb1ba32a23407c94cc3d88aaf591b, type: 3}
+  gemRed: {fileID: 1317063988068746, guid: 807c1c1c2da1d4a5d86ceffb85a3b363, type: 3}
+  gemGreen: {fileID: 1926542691732368, guid: 06bfdc4499737419aae4ec7eaece6e56, type: 3}
+  gemYellow: {fileID: 1130909246312860, guid: 59e86460fe9a64a56b12593153dfa163, type: 3}
+  gemOrange: {fileID: 1811144861758264, guid: 060656f3a77394676a89e799354dc1d3, type: 3}
+  originPosition: {x: 0, y: 5, z: 0}
+  pressedDown: 0
+  pressedDownPosition: {x: 0, y: 0}
+  pressedDownGameObject: {fileID: 0}
+  pressedUpPosition: {x: 0, y: 0}
+  pressedUpGameObject: {fileID: 0}
+  validMoveInProcess: 0
+  matchesFoundText: {fileID: 0}
