@@ -60,32 +60,56 @@ public class GridController : MonoBehaviour
 
                 if (randomNum >= 1 && randomNum < 15)
                 {
-                    Instantiate(gemBlue, grid[row, column].GetPosition(), Quaternion.identity);
+                    GameObject pieceGameObject = Instantiate(gemBlue, newPiece.GetPosition(), Quaternion.identity);
+                    newPiece.SetPieceType(PieceTypes.Blue);
+
+                    PieceController controller = pieceGameObject.GetComponent<PieceController>();
+                    controller.SetPiece(newPiece);
                 }
                 else if (randomNum >= 15 && randomNum < 30)
                 {
-                    Instantiate(gemPurp, grid[row, column].GetPosition(), Quaternion.identity);
+                    GameObject pieceGameObject = Instantiate(gemPurp, newPiece.GetPosition(), Quaternion.identity);
 
+                    newPiece.SetPieceType(PieceTypes.Purple);
+
+                    PieceController controller = pieceGameObject.GetComponent<PieceController>();
+                    controller.SetPiece(newPiece);
                 }
                 else if (randomNum >= 30 && randomNum < 45)
                 {
-                    Instantiate(gemRed, grid[row, column].GetPosition(), Quaternion.identity);
+                    GameObject pieceGameObject = Instantiate(gemRed, newPiece.GetPosition(), Quaternion.identity);
 
+                    newPiece.SetPieceType(PieceTypes.Red);
+
+                    PieceController controller = pieceGameObject.GetComponent<PieceController>();
+                    controller.SetPiece(newPiece);
                 }
                 else if (randomNum >= 45 && randomNum < 60)
                 {
-                    Instantiate(gemGreen, grid[row, column].GetPosition(), Quaternion.identity);
+                    GameObject pieceGameObject = Instantiate(gemGreen, newPiece.GetPosition(), Quaternion.identity);
 
+                    newPiece.SetPieceType(PieceTypes.Green);
+
+                    PieceController controller = pieceGameObject.GetComponent<PieceController>();
+                    controller.SetPiece(newPiece);
                 }
                 else if (randomNum >= 60 && randomNum < 75)
                 {
-                    Instantiate(gemYellow, grid[row, column].GetPosition(), Quaternion.identity);
+                    GameObject pieceGameObject = Instantiate(gemYellow, newPiece.GetPosition(), Quaternion.identity);
 
+                    newPiece.SetPieceType(PieceTypes.Yellow);
+
+                    PieceController controller = pieceGameObject.GetComponent<PieceController>();
+                    controller.SetPiece(newPiece);
                 }
                 else if (randomNum >= 75 && randomNum < 90)
                 {
-                    Instantiate(gemOrange, grid[row, column].GetPosition(), Quaternion.identity);
+                    GameObject pieceGameObject = Instantiate(gemOrange, newPiece.GetPosition(), Quaternion.identity);
 
+                    newPiece.SetPieceType(PieceTypes.Orange);
+
+                    PieceController controller = pieceGameObject.GetComponent<PieceController>();
+                    controller.SetPiece(newPiece);
                 }
 
                 grid[row, column] = newPiece;
@@ -145,7 +169,7 @@ public class GridController : MonoBehaviour
                         topPiece1.SetForDestruction();
                         bottomPiece1.SetForDestruction();
                         toDestroy1.SetForDestruction();
-                        Debug.Log("It Work");
+                        Debug.Log("It Work :D");
                     }
                 }
             }
@@ -155,7 +179,7 @@ public class GridController : MonoBehaviour
             }
         }
 
-        Debug.Log("No move fore you");
+        Debug.Log("No move for you");
     }
 
     public bool IsDestroyed(Vector2 gridPosition)
@@ -163,5 +187,6 @@ public class GridController : MonoBehaviour
         Piece piece = grid[(int)gridPosition.x, (int)gridPosition.y];
         return piece.GetDestruction();
     }
+
 }
 

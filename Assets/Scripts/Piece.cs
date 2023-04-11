@@ -4,12 +4,12 @@ using UnityEngine;
 
 public enum PieceTypes
 {
-    GemBlue = 1,
-    GemPurple = 2,
-    GemRed = 3,
-    GemGreen = 4,
-    GemYellow = 5,
-    GemOrange = 6
+    Blue = 1,
+    Purple = 2,
+    Red = 3,
+    Green = 4,
+    Yellow = 5,
+    Orange = 6
 }
 public class Piece
 {
@@ -45,6 +45,10 @@ public class Piece
         this.setForDestruction = true;
     }
 
+    public void SetPieceType(PieceTypes pieceType)
+    {
+        this.pieceType = pieceType;
+    }
     public void SetGridPosition(Vector2 position)
     {
         this.gridPosition = position;
