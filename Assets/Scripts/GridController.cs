@@ -44,17 +44,18 @@ public class GridController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        matchesFound = 0;
+
         pressedDown = false;
 
-        System.Random rand = new System.Random();
         for (int row = 0; row < grid.GetLength(0); row++)
         {
             for (int column = 0; column < grid.GetLength(1); column++)
             {
                 Vector3 newWorldPosition = new Vector3(originPosition.x + row, originPosition.y, originPosition.z - column);
                 Piece newPiece = new Piece(newWorldPosition, new Vector2(row, column));
-                GameObject gameObject = Instantiate(piecePrefab, newPiece.GetPosition(), Quaternion.identity);
 
+                System.Random rand = new System.Random();
 
                 int randomNum = rand.Next(1, 90);
 
@@ -140,9 +141,10 @@ public class GridController : MonoBehaviour
 
             grid[(int)startMovementPiecePosition.x, (int)startMovementPiecePosition.y].SetGridPosition(startMovementPiecePosition);
             grid[(int)startMovementPiecePosition.x, (int)startMovementPiecePosition.y].SetForDestruction(false);
+
             validMoveInProcess = false;
 
-            matchesFound += 1;
+            AddMatchesFound();
         }
     }
 
@@ -159,40 +161,14 @@ public class GridController : MonoBehaviour
 
             return foundPiece;
         }
-        catch (IndexOutOfRangeException)
-        {
-
-        }
-        catch (Exception e)
-        {
-            Debug.LogException(e);
-        }
-
-        return null;
-    }
-
-    private Piece GetGridPiece(int row, int column, bool isDestroyed)
-    {
-        Piece foundPiece;
-        try
-        {
-            foundPiece = grid[row, column];
-            if (foundPiece == null)
-            {
-                return null;
-            }
-
-            if (!isDestroyed)
-            {
-                return null;
-            }
-
-            return foundPiece;
-        }
         catch (IndexOutOfRangeException)  // CS0168
         {
             // Catch IndexOutOfRangeException when the grid is asked to retrieve a
             // piece from an unknown location.
+        }
+        catch (Exception e)
+        {
+            Debug.LogException(e);
         }
 
         return null;
@@ -444,7 +420,6 @@ public class GridController : MonoBehaviour
     public bool IsDestroyed(Vector2 gridPosition)
     {
         Piece piece = grid[(int)gridPosition.x, (int)gridPosition.y];
-        return piece.GetDestruction();
         if (piece != null)
         {
             return piece.GetDestruction();
