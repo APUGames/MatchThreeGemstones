@@ -45,10 +45,16 @@ public class Piece
         this.setForDestruction = true;
     }
 
+    public void SetForDestruction(bool value)
+    {
+        this.setForDestruction = value;
+    }
+
     public void SetPieceType(PieceTypes pieceType)
     {
         this.pieceType = pieceType;
     }
+
     public void SetGridPosition(Vector2 position)
     {
         this.gridPosition = position;
@@ -59,7 +65,7 @@ public class Piece
         return position;
     }
 
-    public Vector3 GetGridPosition()
+    public Vector2 GetGridPosition()
     {
         return gridPosition;
     }
