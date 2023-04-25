@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                gameResultText.text = "You Lose :(";
+                gameResultText.text = "You Lose...";
             }
         }
     }
